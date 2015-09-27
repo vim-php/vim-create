@@ -19,7 +19,7 @@ command! CreateNewSymfonyProject :call StartNewSymfonyLtsProjectFunction()<CR>
 function! g:CreateNewPHPPRojectFunction()
     exec "!curl -Ss https://getcomposer.org/installer | php"
     let l:project_name = input('Enter project name: ')
-    exec '!php composer.phar create-project sensorario/starter ' . l:project_name . ' 1.0.0'
+    exec '!php composer.phar create-project sensorario/starter ' . l:project_name . ' 1.1.0'
     exec '!mv composer.phar ' . l:project_name . '/'
     exec 'qa'
 endfunction
