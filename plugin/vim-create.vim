@@ -29,8 +29,6 @@ function! StartNewSymfonyLtsProjectFunction()
     if 1 != filereadable("/usr/local/bin/symfony")
         exec '!sudo curl -LsS http://symfony.com/installer -o /usr/local/bin/symfony'
         exec '!sudo chmod a+x /usr/local/bin/symfony'
-    else
-        exec '!echo "Installer already installed"'
     endif
     exec '!symfony new ' . input('Project name: ')
 endfunction
