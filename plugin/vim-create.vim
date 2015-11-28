@@ -15,6 +15,7 @@
 
 command! CreateNewPHPProject :call g:CreateNewPHPPRojectFunction()<CR>
 command! CreateNewSymfonyProject :call StartNewSymfonyLtsProjectFunction()<CR>
+command! CreateNewPennyProject :call StartNewPennyProjectFunction()<CR>
 
 function! g:CreateNewPHPPRojectFunction()
     exec "!curl -Ss https://getcomposer.org/installer | php"
@@ -31,5 +32,10 @@ function! StartNewSymfonyLtsProjectFunction()
         exec '!sudo chmod a+x /usr/local/bin/symfony'
     endif
     exec '!symfony new ' . input('Project name: ')
+endfunction
+
+function! StartNewPennyProjectFunction()
+    exec '!clear'
+    exec '!composer create-project penny/classic-app -s dev ' . input('Project name: ')
 endfunction
 
