@@ -1,15 +1,10 @@
 " ------------------------------------------------------------------------------
 " Vim Composer                                                               {{{
-"
 " Author: Simone Gentili <sensorario@gmail.com>
-"
 " Description:
-" Project creator for vim
-"
+" PHP Project creator for vim
 " Requires: Vim
-"
 " License: MIT
-"
 " }}}
 " ------------------------------------------------------------------------------
 
@@ -20,7 +15,7 @@ command! CreateNewPennyProject :call StartNewPennyProjectFunction()<CR>
 function! g:CreateNewPHPPRojectFunction()
     exec "!curl -Ss https://getcomposer.org/installer | php"
     let l:project_name = input('Enter project name: ')
-    exec '!php composer.phar create-project sensorario/starter ' . l:project_name . ' @dev'
+    exec '!php composer.phar create-project vim-php/starter ' . l:project_name . ' @dev'
     exec '!mv composer.phar ' . l:project_name . '/'
     exec 'qa'
 endfunction
