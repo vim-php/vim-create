@@ -15,7 +15,7 @@ command! CreateNewPennyProject :call StartNewPennyProjectFunction()<CR>
 function! g:CreateNewPHPPRojectFunction()
     exec "!curl -Ss https://getcomposer.org/installer | php"
     let l:project_name = input('Enter project name: ')
-    exec '!php composer.phar create-project vim-php/starter ' . l:project_name . ' 1.0.2'
+    exec '!php composer.phar create-project vim-php/starter ' . l:project_name . ' 1.0.4'
     exec '!mv composer.phar ' . l:project_name . '/'
     exec 'qa'
 endfunction
