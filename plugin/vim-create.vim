@@ -21,12 +21,11 @@ function! g:CreateNewPHPPRojectFunction()
 endfunction
 
 function! StartNewSymfonyLtsProjectFunction()
-    exec '!clear'
-    if 1 != filereadable("/usr/local/bin/symfony")
-        exec '!sudo curl -LsS http://symfony.com/installer -o /usr/local/bin/symfony'
-        exec '!sudo chmod a+x /usr/local/bin/symfony'
-    endif
-    exec '!symfony new ' . input('Project name: ')
+    exec "!curl -Ss https://getcomposer.org/installer | php"
+    let l:project_name = input('Enter project name: ')
+    exec '!php composer.phar create-project symfony/skeleton ' . l:project_name
+    exec '!mv composer.phar ' . l:project_name . '/'
+    exec 'qa'
 endfunction
 
 function! StartNewPennyProjectFunction()
